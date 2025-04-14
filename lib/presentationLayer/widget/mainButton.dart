@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app/core/utils/style.dart';
 
 class MainButton extends StatelessWidget {
   final String label;
@@ -23,15 +24,11 @@ class MainButton extends StatelessWidget {
       height: hight ?? 56,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(
-          20.2,
-        ),
+        borderRadius: BorderRadius.circular(20.2),
       ),
       child: MaterialButton(
         onPressed: function,
-        child: Text(
-          label,
-        ),
+        child: Text(label, textAlign: TextAlign.center, style: Styles.style22),
       ),
     );
   }
