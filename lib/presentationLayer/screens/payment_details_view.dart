@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../dataLayer/cubit/app_cubit.dart';
-import '../../dataLayer/cubit/app_state.dart';
-import '../helper/snakbar_error.dart';
+import 'package:payment_app/presentationLayer/widget/custom_credit_card.dart';
 import '../widget/custom_appBar.dart';
 import '../widget/payment_item.dart';
 
@@ -11,23 +8,15 @@ class PaymentDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AppBloc, AppState>(
-      listener: (BuildContext context, AppState state) {
-        if (state is GetWeatherError) {
-          showCustomErrorSnackbar(message: state.error, context: context);
-        }
-      },
-      builder: (context, state) {
-        return Scaffold(
-          appBar: buildAppBar(title: 'Payment Details'),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: SingleChildScrollView(
-              child: Column(children: [SizedBox(height: 25), Payment()]),
-            ),
-          ),
-        );
-      },
+    return Scaffold(
+      appBar: buildAppBar(title: 'Payment Details'),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: SingleChildScrollView(
+          child: Column(children: [SizedBox(height: 25), Payment(),
+          CustomCreditCard()]),
+        ),
+      ),
     );
   }
 }
