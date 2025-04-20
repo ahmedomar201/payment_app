@@ -8,6 +8,7 @@ import '../widget/cart_info.dart';
 import '../widget/custom_appBar.dart';
 import '../widget/mainButton.dart';
 import '../widget/total_price.dart';
+import 'payment_details_view.dart';
 
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
@@ -59,7 +60,11 @@ class MyCart extends StatelessWidget {
                     width: 350,
                     hight: 73,              
                     label: 'Complete Payment',
-                    function: () {},
+                    function: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                       PaymentDetails()
+                      ));
+                    },
                     color: const Color(0xFF34A853),
                   ),
                 ],

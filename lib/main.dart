@@ -4,7 +4,8 @@ import 'dataLayer/cubit/app_cubit.dart';
 import 'core/utils/constansts.dart';
 import 'core/utils/injection.dart'as di;
 import 'core/utils/injection.dart';
-import 'presentationLayer/screens/payment_details_view.dart';
+import 'presentationLayer/screens/myCart_view.dart';
+import 'presentationLayer/screens/thank_you_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
          navigatorKey: navigatorKey,
          debugShowCheckedModeBanner: false,
-        home:const PaymentDetails(),
+        home:const ThankYouView(),
       ),
     );
   }
