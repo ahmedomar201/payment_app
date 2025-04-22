@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../widget/thank_you.dart';
+
+
 class ThankYouView extends StatelessWidget {
   const ThankYouView({super.key});
 
@@ -12,17 +15,7 @@ class ThankYouView extends StatelessWidget {
           child: Stack(
             clipBehavior: Clip.none,
             children: [
-              Container(
-                width: 350,
-                height: 672,
-                decoration: ShapeDecoration(
-                  color: const Color(0xFFD9D9D9),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-
+              ThankYou(),
               Positioned(
                 bottom: MediaQuery.sizeOf(context).height * 0.2 + 20,
                 left: 0,
@@ -38,15 +31,6 @@ class ThankYouView extends StatelessWidget {
                           child: Container(
                             height: 2,
                             color: const Color(0xFFB7B7B7),
-                            // decoration: ShapeDecoration(
-                            //   shape: RoundedRectangleBorder(
-                            //     side: BorderSide(
-                            //       width: 2,
-                            //       strokeAlign: BorderSide.strokeAlignCenter,
-                            //       color: const Color(0xFFB7B7B7),
-                            //     ),
-                            //   ),
-                            // ),
                           ),
                         ),
                       ),
