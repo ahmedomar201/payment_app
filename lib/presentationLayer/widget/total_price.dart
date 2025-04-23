@@ -10,11 +10,11 @@ final TextStyle? textStyle2;
 
 
   const TotalPrice({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
      this.textStyle, this.textStyle2,
-  }) : super(key: key);
+  });
 
 
   @override

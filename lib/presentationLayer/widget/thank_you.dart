@@ -62,7 +62,7 @@ class ThankYou extends StatelessWidget {
               textStyle2: Styles.style25,
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: 20),
 
             InfoWidget(),
             Spacer(),
@@ -70,7 +70,7 @@ class ThankYou extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(FontAwesomeIcons.barcode,size: 64,),
+                Icon(FontAwesomeIcons.barcode, size: 64),
                 Container(
                   width: 113,
                   height: 58,
@@ -99,7 +99,7 @@ class ThankYou extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: ((MediaQuery.sizeOf(context).height * 0.2 + 20)/4)-29,
+              height: ((MediaQuery.sizeOf(context).height * 0.2 + 20) / 4) - 29,
             ),
           ],
         ),

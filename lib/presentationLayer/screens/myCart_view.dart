@@ -7,6 +7,7 @@ import '../helper/snakbar_error.dart';
 import '../widget/cart_info.dart';
 import '../widget/custom_appBar.dart';
 import '../widget/mainButton.dart';
+import '../widget/paymnet_card.dart';
 import '../widget/total_price.dart';
 import 'payment_details_view.dart';
 
@@ -23,7 +24,7 @@ class MyCart extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
-          appBar:buildAppBar(title: 'My Cart'),
+          appBar: buildAppBar(title: 'My Cart'),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: SingleChildScrollView(
@@ -58,12 +59,22 @@ class MyCart extends StatelessWidget {
                   SizedBox(height: 50),
                   MainButton(
                     width: 350,
-                    hight: 73,              
+                    hight: 73,
                     label: 'Complete Payment',
                     function: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                       PaymentDetails()
-                      ));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                      //  PaymentDetails()
+                      // ));
+
+                      showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                        ),
+                        context: context,
+                        builder: (context) {
+                          return PaymentModelSheet();
+                        },
+                      );
                     },
                     color: const Color(0xFF34A853),
                   ),
@@ -73,6 +84,32 @@ class MyCart extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class PaymentModelSheet extends StatelessWidget {
+  const PaymentModelSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Payment(),
+          SizedBox(
+            height: 32,
+          ),
+          MainButton(
+            label: 'Countine',
+            function: () {},
+            width: 350,
+            color: const Color(0xFF34A853),
+            hight: 73,
+          ),
+        ],
+      ),
     );
   }
 }
