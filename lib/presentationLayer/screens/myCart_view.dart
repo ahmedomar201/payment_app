@@ -9,7 +9,6 @@ import '../widget/custom_appBar.dart';
 import '../widget/mainButton.dart';
 import '../widget/paymnet_card.dart';
 import '../widget/total_price.dart';
-import 'payment_details_view.dart';
 
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
